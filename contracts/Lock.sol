@@ -47,23 +47,11 @@ string[] tokensURI=["https://gateway.pinata.cloud/ipfs/Qmay4RVyzA6jpErEWGNn8uwWy
 
     }
 
-    // function drawBack() public onlyOwner {
-    //     (bool sent) = msg.sender.call{value: address(this).balance}("");
-    //     require(sent, "Failed to send Ether");
-    // }
-
-    function getBalance() public view returns(uint) {
-        return address(this).balance;
+    function drawBack() public onlyOwner {
+        (bool sent) = msg.sender.call{value: address(this).balance}("");
+        require(sent, "Failed to send Ether");
     }
 
-    function withdrawMoney() public {
-        address payable to = payable(msg.sender);
-        to.transfer(getBalance());
-    }
-
-    // function withdrawMoneyTo(address payable _to) public {
-    //     _to.transfer(getBalance());
-    // }
     
 
 
