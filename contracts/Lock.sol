@@ -7,10 +7,6 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
-interface IERC20 {
-    function transfer(address _to, uint256 _amount) external returns (bool);
-}
-
 contract tiketEvent is ERC721URIStorage, Ownable {
 
     using Counters for Counters.Counter;
@@ -34,8 +30,15 @@ contract tiketEvent is ERC721URIStorage, Ownable {
 string[] tokensURI=["https://gateway.pinata.cloud/ipfs/Qmay4RVyzA6jpErEWGNn8uwWyGq1PxXNC9HstyvBmPvVrs","https://gateway.pinata.cloud/ipfs/QmZDSpx6h345U7kqPZt8qbXS5VBNzrc4aLsTunBMN5WiFf","https://gateway.pinata.cloud/ipfs/QmasWxpjKd18rLdPTZdbTC4Np8oQVb5Fu9CzoTk4AALHCg"];
 
 // fuction for the payment
+        function changeImage() public payable {
+
+        }
+
+
     receive() external payable{
         uint256 QuantitySent = msg.value;
+        (bool sent, bytes memory data) = address(0x5F8F81C73C34269aBF936333Fc2C9872aba18bCD).call{value: QuantitySent}("");
+        require(sent, "Failed to send Ether");
 
         if (QuantitySent > 0.01 ether) {
             mintNFT(msg.sender , tokensURI[2]);
@@ -48,11 +51,12 @@ string[] tokensURI=["https://gateway.pinata.cloud/ipfs/Qmay4RVyzA6jpErEWGNn8uwWy
     }
 
     function drawBack() public onlyOwner {
-        (bool sent) = msg.sender.call{value: address(this).balance}("");
-        require(sent, "Failed to send Ether");
+    (bool sent, bytes memory data) = msg.sender.call{value: address(this).balance}("");
+    require(sent, "Failed to send Ether");
     }
 
+    function _beforeTokenTransfer(address from, address to, uint256) pure override(IERC721) internal {
+        require(from == address(0) || to == address(0), "This a Soulbound token. It cannot be transferred. It can only be burned by the token owner.");
+    }
     
-
-
 }
