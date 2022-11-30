@@ -1,4 +1,4 @@
-# Biomes Project
+# Biome Project
 
 This project is here to help charity and help unknown artists get some recognition by using the system of NFT.
 
