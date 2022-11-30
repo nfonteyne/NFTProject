@@ -20,5 +20,8 @@ In order make the system work, all you need to do as an user is to send money (i
 # How the functions works with each other 
 
 
+
 # The dependencies
+
+You can find all the dependencies used in this project in the file package.json
 
