@@ -25,3 +25,14 @@ In order make the system work, all you need to do as an user is to send money (i
 
 You can find all the dependencies used in this project in the file package.json
 
+
+# Our team
+
+This project was designed by our team of expert composed by : 
+
+-Nathan Fonteyne
+-Julia Forte
+-Anais Bellia
+-Anhkim Chaloupe
+-Antoine Roger
+-Yann Faussurier
