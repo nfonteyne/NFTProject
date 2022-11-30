@@ -18,7 +18,7 @@ The Badges will by in the form of an NFT that's not transferable from one user t
 
 In order to make the system work, all you need to do as an user is to send money (in the currency of ether or MATIC) to the following adress using Metamask: 
 
-                   `0xB5D4C2B7Ff778D7d34B23DdE5c4a654528C2464f`
+`0xB5D4C2B7Ff778D7d34B23DdE5c4a654528C2464f`
 
 You now have a beautiful NFT!
 
