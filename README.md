@@ -17,7 +17,8 @@ In order make the system work, all you need to do as an user is to send money (i
 0xB5D4C2B7Ff778D7d34B23DdE5c4a654528C2464f
 
 
-# How the functions works with each other 
+# How the files works with each other 
+
 
 
 
